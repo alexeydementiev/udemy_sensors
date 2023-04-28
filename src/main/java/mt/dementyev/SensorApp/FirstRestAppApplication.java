@@ -1,4 +1,4 @@
-package mt.dementyev.FirstRestApp;
+package mt.dementyev.SensorApp;
 
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
