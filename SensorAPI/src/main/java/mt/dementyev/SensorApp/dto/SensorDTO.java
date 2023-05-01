@@ -12,6 +12,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SensorDTO {
+
+  private Long id;
   @NotEmpty(message = "Sensor's name can't be empty")
   @Size(min = 2, max = 30, message = "Name must be 2 - 30 symbols")
   private String name;

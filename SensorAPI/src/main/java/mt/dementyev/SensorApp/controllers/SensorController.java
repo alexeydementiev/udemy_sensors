@@ -36,13 +36,12 @@ public class SensorController {
 
   @GetMapping
   public List<SensorDTO> getSensors() {
-    return sensorService.getSensors().stream().map(p -> convertToSensorDTO(p)).collect(Collectors.toList());
+    return sensorService.getSensors().stream().map(this::convertToSensorDTO).collect(Collectors.toList());
   }
 
   @GetMapping("/{id}")
   public SensorDTO getPerson(@PathVariable("id") int id) throws SensorNotFoundException {
-    SensorDTO sensorDTO = convertToSensorDTO(sensorService.getUserById(id));
-    return sensorDTO;
+    return convertToSensorDTO(sensorService.getUserById(id));
   }
 
   @PostMapping("/registration")
@@ -60,7 +59,7 @@ public class SensorController {
   }
 
   @ExceptionHandler
-  private ResponseEntity<SensorErrorResponse> handleException(SensorNotFoundException e)  {
+  private ResponseEntity<SensorErrorResponse> handleException(SensorNotFoundException e) {
     SensorErrorResponse response = new SensorErrorResponse(
       "Person with this id wasn't found",
       System.currentTimeMillis()

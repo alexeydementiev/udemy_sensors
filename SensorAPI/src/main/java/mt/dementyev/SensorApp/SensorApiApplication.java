@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @AllArgsConstructor
-public class FirstRestAppApplication {
+public class SensorApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FirstRestAppApplication.class, args);
+		SpringApplication.run(SensorApiApplication.class, args);
 	}
 
 	@Bean
